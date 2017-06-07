@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVAutoHack", "TVAutoHack\TVAutoHack.csproj", "{F71B3859-FB9C-4C0A-A533-9CA28A22B0CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F71B3859-FB9C-4C0A-A533-9CA28A22B0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71B3859-FB9C-4C0A-A533-9CA28A22B0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71B3859-FB9C-4C0A-A533-9CA28A22B0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71B3859-FB9C-4C0A-A533-9CA28A22B0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

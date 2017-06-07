@@ -1,0 +1,18 @@
+******************* HƯỚNG DẪN SỬ DỤNG TVAUTOHACK *******************
+
+1. TVAUTOHACK hoạt động như thế nào?
+	Trước tiên nói về cách đăng nhập và lấy thông tin tài khoản của TVAuto: Bạn mở auto lên, bấm nút đăng nhập, cái auto sẽ gửi thông tin tài khoản lên server (tvauto.net), server chứng thực tài khoản và gửi thông tin về những chức năng bạn đã mua, cái auto sẽ mở khóa những chức năng đó.
+	TVAutoHack đơn giản là tạo một cái server giả trên máy các bạn rồi làm những thứ mà server thật làm (đơn giản vãi). Cơ mà muốn nó kết nối tới server giả thì phải đặt địa chỉ IP trên máy mình giống với IP của server TVauto.net.
+
+2. Hướng dẫn sử dụng
+	Bước 1: Lên TVAuto.net down bản auto mới nhất về, giải nén ra.
+	Bước 2: Tạo card mạng ảo (card loopback, cái này thì google nhá) trên máy tính, đặt địa chỉ IP là 103.56.164.217 (IP của trang TVauto.net), subnet mask: 255.255.255.252 (Lưu ý là khi muốn update TVAuto thì disable cái card này đi rồi tải auto về, rồi lại enable card).
+	Bước 3: Khởi động TVAutoHack.exe (Lưu ý là cái này chạy ngầm cho đỡ choán chỗ cái Taskbar, nếu muốn tắt thì vào Task Manager, bác nào muốn có icon ở taskbar thì pm mình).
+	Bước 4: Khởi động TVAuto.
+	Bước 5: Đăng nhập TVAuto bằng một tài khoản vớ vẩn (bấm loạn xạ trên bàn phím cũng được). Click Ghi nhớ tài khoản với Tự động đăng nhập luôn cho đỡ phiền phức.
+	Sau khi đăng nhập nhập vào mục "Tài khoản" thấy mọi chức năng đã được set thành 01/03/2099
+
+	
+Clip hướng dẫn:
+Windows 7/8/10: https://youtu.be/Rr7OXGdfpM4
+Windows XP: https://youtu.be/GcXMsXhd4TE
