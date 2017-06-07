@@ -41,53 +41,55 @@ namespace TVAutoHack
 			listener = new TcpListener(IPAddress.Parse("103.56.164.217"), 60000);
 			listener.Start();
 
-		// Send Version string
-		WaitForConnection:
-			try
+			// Send Version string
+			while (true)
 			{
-				client = listener.AcceptTcpClient();
-				timer1 = new System.Timers.Timer();
-				timer1.Interval = 1000;
-				timer1.Elapsed += Timer1_Elapsed;
-				timer1.Start();
-
-				client.Client.Send(Encoding.ASCII.GetBytes("1040Tvpro 1.9.4\r\n"));
-				StreamReader reader = new StreamReader(client.GetStream());
-
-				// read
-				while (true)
+				try
 				{
-					if (reader.BaseStream.CanRead)
+					client = listener.AcceptTcpClient();
+					timer1 = new System.Timers.Timer();
+					timer1.Interval = 1000;
+					timer1.Elapsed += Timer1_Elapsed;
+					timer1.Start();
+
+					client.Client.Send(Encoding.ASCII.GetBytes("1040Tvpro 1.9.4\r\n"));
+					StreamReader reader = new StreamReader(client.GetStream());
+
+					// read
+					while (true)
 					{
-						string request = reader.ReadLine();
-
-						request = request.Substring(0, 4);
-
-						if (request.Equals("1002"))
+						if (reader.BaseStream.CanRead)
 						{
-							client.Client.Send(Encoding.ASCII.GetBytes("1010"));
-						}
-						else if (request.Equals("1011"))
-						{
-							byte[] data = { 0x31, 0x30, 0x32, 0x30, 0x83, 0x30, 0x0d, 0x0a };
-							client.Client.Send(data);
+							string request = reader.ReadLine();
 
-							for (int i = 1; i <= 9; i++)
-								for (int j = 1; j <= 9; j++)
-								{
-									byte[] train = { 0x31, 0x30, 0x33, 0x38, 0x83, 0x31, 0x30, 0x31, 0x2f, 0x30, 0x33, 0x2f, 0x32, 0x30, 0x39, 0x39, 0x0d, 0x0a };
-									train[2] = (byte)(0x30 + i);
-									train[3] = (byte)(0x30 + j);
-									client.Client.Send(train);
-								}
+							request = request.Substring(0, 4);
+
+							if (request.Equals("1002"))
+							{
+								client.Client.Send(Encoding.ASCII.GetBytes("1010"));
+							}
+							else if (request.Equals("1011"))
+							{
+								byte[] data = { 0x31, 0x30, 0x32, 0x30, 0x83, 0x30, 0x0d, 0x0a };
+								client.Client.Send(data);
+
+								for (int i = 1; i <= 9; i++)
+									for (int j = 1; j <= 9; j++)
+									{
+										byte[] train = { 0x31, 0x30, 0x33, 0x38, 0x83, 0x31, 0x30, 0x31, 0x2f, 0x30, 0x33, 0x2f, 0x32, 0x30, 0x39, 0x39, 0x0d, 0x0a };
+										train[2] = (byte)(0x30 + i);
+										train[3] = (byte)(0x30 + j);
+										client.Client.Send(train);
+									}
+							}
 						}
 					}
 				}
-			}
-			catch
-			{
-				timer1.Stop();
-				goto WaitForConnection;
+				catch
+				{
+					timer1.Stop();
+					continue;
+				}
 			}
 		}
 
